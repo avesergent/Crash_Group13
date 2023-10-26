@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CharJump : MonoBehaviour
 {
-    public float speed = 10f;
+    public float JumpForce = 20f;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,7 +16,7 @@ public class CharJump : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Space))
         {
-            transform.position += Vector3.up * speed * Time.deltaTime;
+            transform.position += Vector3.up * JumpForce * Time.deltaTime;
         }
     }
 }
