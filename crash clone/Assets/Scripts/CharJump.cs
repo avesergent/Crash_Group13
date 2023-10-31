@@ -4,19 +4,37 @@ using UnityEngine;
 
 public class CharJump : MonoBehaviour
 {
-    public float JumpForce = 20f;
-    // Start is called before the first frame update
-    void Start()
+    public float jumpForce = 10.0f;
+    private bool isJumping = false;
+    private Rigidbody rb;
+
+    private void Start()
     {
-        
+        rb = GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && !isJumping)
         {
-            transform.position += Vector3.up * JumpForce * Time.deltaTime;
+            Jump();
         }
+    }
+    ///<summary>
+    ///Launches the player up, waits _ seconds before allowing user to jump again
+    ///</summary>
+    private void Jump()
+    {
+        isJumping = true;
+        rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+        //Time in between
+        Invoke("ResetJump", 2.0f);
+    }
+    ///<summary>
+    ///Resets isJumping to false
+    ///</summary>
+    private void ResetJump()
+    {
+        isJumping = false;
     }
 }
