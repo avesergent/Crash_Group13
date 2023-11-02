@@ -29,8 +29,6 @@ public class CharController : MonoBehaviour
     private float distance_to_wall_forward = 2f;
     //how close are we to a wall going backwards
     private float distance_to_wall_back = 2f;
-    //Spin Attack status
-    private bool isSpinning = false;
 
     //Start is a function that is called once when the object is Instatiated. 
     void Start()
@@ -143,16 +141,5 @@ public class CharController : MonoBehaviour
             is_grounded = false;
         }
 
-    }
-    ///<summary>
-    ///Player attacks and damages or kills enemies
-    ///</summary>
-    public void spinAttack()
-    {
-        isSpinning = true;
-    }
-    public void resetSpin()
-    {
-        isSpinning = false;
     }
 }
