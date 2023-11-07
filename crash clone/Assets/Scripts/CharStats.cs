@@ -18,4 +18,11 @@ public class CharStats : MonoBehaviour
             SceneManager.LoadScene(1);
         }
     }
+    ///<summary>
+    ///Add a life when called upon
+    ///</summary>
+    public void AddALife()
+    {
+        Lives++;
+    }
 }
