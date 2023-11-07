@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class CharStats : MonoBehaviour
 {
+    // Life count
     public int Lives = 3;
     ///<summary>
     ///Removes a life when called upon

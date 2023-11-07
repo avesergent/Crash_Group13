@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class CharJump : MonoBehaviour
 {
+    // Jump Force
     public float jumpForce = 10.0f;
+    // Jump State
     private bool isJumping = false;
+    // Rigidbody
     private Rigidbody rb;
 
     private void Start()
@@ -25,9 +28,11 @@ public class CharJump : MonoBehaviour
     ///</summary>
     private void Jump()
     {
+        // Sets isJumping to true
         isJumping = true;
-        rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-        //Time in between
+        // Launches player
+        rb.AddForce(new Vector3(0, jumpForce, 0), ForceMode.Impulse);
+        // Time in between
         Invoke("ResetJump", 2.0f);
     }
     ///<summary>

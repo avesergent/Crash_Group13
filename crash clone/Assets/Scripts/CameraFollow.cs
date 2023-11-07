@@ -4,18 +4,18 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
-    // The game object to follow
+    // Game object input
     public Transform target;
-    // Smoothing factor for camera movement
+    // Smoothing for cam
     public float smoothRate = 5.0f;
 
     private void Update()
     {
-        // Get the current camera position
+        // Get camera pos
         Vector3 currentPosition = transform.position;
-        // Calculate the target position with the same X and Y coordinates as the camera
+        // Calculate target pos
         Vector3 targetPosition = new Vector3(currentPosition.x, target.position.y + 2, target.position.z - 5);
-        // Smoothly move the camera to the target position
+        // Move camera to target pos
         transform.position = Vector3.Lerp(currentPosition, targetPosition, smoothRate * Time.deltaTime);
     }
 }
