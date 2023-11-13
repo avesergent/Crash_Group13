@@ -11,7 +11,14 @@ public class CharStats : MonoBehaviour
 
     //wumpafruit value
     private float wumpaPointValue = 1f;
+    // Life count
+    public int Lives = 3;
 
+    public void Update()
+    {
+
+
+    }
     //destroys wumpa when collided with
     private void OnTriggerEnter(Collider other)
     {
@@ -22,10 +29,6 @@ public class CharStats : MonoBehaviour
             Destroy(other.gameObject);
         }
     }
-
-
-    // Life count
-    public int Lives = 3;
     ///<summary>
     ///Removes a life when called upon
     ///</summary>

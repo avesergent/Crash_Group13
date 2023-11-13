@@ -33,7 +33,7 @@ public class CharController : MonoBehaviour
     //Start is a function that is called once when the object is Instatiated. 
     void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
+
         body = GetComponent<Rigidbody>();
 
     }
@@ -68,10 +68,6 @@ public class CharController : MonoBehaviour
 
 
 
-        if (Input.GetKeyDown("escape"))
-        {
-            Cursor.lockState = CursorLockMode.None;
-        }
 
     }
 
