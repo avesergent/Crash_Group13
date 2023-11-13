@@ -14,7 +14,7 @@ public class CharStats : MonoBehaviour
     // Life count
     public int Lives = 3;
 
-    public void Update()
+    public void Start()
     {
 
 

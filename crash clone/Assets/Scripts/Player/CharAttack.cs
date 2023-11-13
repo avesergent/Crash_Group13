@@ -8,6 +8,7 @@ public class CharAttack : MonoBehaviour
     private float attackDuration = 1.0f;
     private float attackCooldown = 1.5f;
     private float lastAttackTime = 0f;
+    public CharStats CharStats;
 
     private void Update()
     {
@@ -53,17 +54,6 @@ public class CharAttack : MonoBehaviour
     private void SetPlayerColor(Color color)
     {
         Renderer renderer = GetComponent<Renderer>();
-            renderer.material.color = color;
+        renderer.material.color = color;
     }
-    ///<summary>
-    ///Checks on collision for an enemy
-    /// </summary>
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (isSpinning)
-        {
-            //Add check for enemy
-        }
-    }
-
 }
