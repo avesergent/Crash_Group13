@@ -9,6 +9,7 @@ TagManager:
   - WumpaFruit
   - Enemy
   - Hitbox
+  - Portal
   layers:
   - Default
   - TransparentFX
