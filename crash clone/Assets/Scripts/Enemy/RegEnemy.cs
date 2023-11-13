@@ -64,14 +64,25 @@ public class RegEnemy : MonoBehaviour
             }
             else
             {
-                // Get spawn point by name
-                GameObject spawnPoint = GameObject.Find(spawnPointName);
-                // Teleport the player to the spawn point position
-                other.transform.position = spawnPoint.transform.position;
-                // Damage Player
-                CharStats.LoseALife();
-            }
+                // Check if the player is above enemy
+                Vector3 playerPosition = other.transform.position;
+                Vector3 enemyPosition = transform.position;
 
+                if (playerPosition.y > enemyPosition.y + 1.12)
+                {
+                    Destroy(gameObject);
+                }
+                else
+                {
+                    // Get spawn point by name
+                    GameObject spawnPoint = GameObject.Find(spawnPointName);
+                    // Teleport the player to the spawn point position
+                    other.transform.position = spawnPoint.transform.position;
+                    // Damage Player
+                    CharStats.LoseALife();
+                }
+          
+            }
         }
     }
 }

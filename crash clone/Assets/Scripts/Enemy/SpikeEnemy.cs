@@ -58,11 +58,10 @@ public class PatrolEnemy : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            if (CharAttack.isSpinning == true)
-            {
-                Destroy(gameObject);
-            }
-            else
+            // Check if the player is above enemy
+            Vector3 playerPosition = other.transform.position;
+            Vector3 enemyPosition = transform.position;
+            if (playerPosition.y > enemyPosition.y + 1.12)
             {
                 // Get spawn point by name
                 GameObject spawnPoint = GameObject.Find(spawnPointName);
@@ -70,6 +69,22 @@ public class PatrolEnemy : MonoBehaviour
                 other.transform.position = spawnPoint.transform.position;
                 // Damage Player
                 CharStats.LoseALife();
+            }
+            else
+            {
+                if (CharAttack.isSpinning == true)
+                {
+                    Destroy(gameObject);
+                }
+                else
+                {
+                    // Get spawn point by name
+                    GameObject spawnPoint = GameObject.Find(spawnPointName);
+                    // Teleport the player to the spawn point position
+                    other.transform.position = spawnPoint.transform.position;
+                    // Damage Player
+                    CharStats.LoseALife();
+                }
             }
 
         }
