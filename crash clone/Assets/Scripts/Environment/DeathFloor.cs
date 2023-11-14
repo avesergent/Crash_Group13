@@ -7,7 +7,7 @@ public class DeathFloor : MonoBehaviour
     // Calls charstats for use of LoseALife
     public CharStats CharStats;
     // Spawn Point Name
-    private string spawnPointName = "SpawnPoint";
+    private string spawnPointName = "OGSpawnPoint";
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")

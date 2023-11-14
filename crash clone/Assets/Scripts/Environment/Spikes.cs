@@ -6,7 +6,7 @@ public class Spikes : MonoBehaviour
 {
     // Calls charstats for use of LoseALife
     public CharStats CharStats;
-    private string spawnPointName = "SpawnPoint";
+    private string spawnPointName = "OGSpawnPoint";
 
     private void OnTriggerEnter(Collider other)
     {

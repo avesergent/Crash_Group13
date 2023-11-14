@@ -10,7 +10,7 @@ public class SpikeEnemy : MonoBehaviour
     private Vector3 rightPos;
     public int speed;
     public bool goingLeft;
-    private string spawnPointName = "SpawnPoint";
+    private string spawnPointName = "OGSpawnPoint";
     // Calls charstats for use of public functions
     public CharStats CharStats;
     public CharAttack CharAttack;

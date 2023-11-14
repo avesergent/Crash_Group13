@@ -33,7 +33,7 @@ public class CharJump : MonoBehaviour
         // Launches player
         rb.AddForce(new Vector3(0, jumpForce, 0), ForceMode.Impulse);
         // Time in between
-        Invoke("ResetJump", 2.0f);
+        Invoke("ResetJump", 1.5f);
     }
     ///<summary>
     ///Resets isJumping to false
