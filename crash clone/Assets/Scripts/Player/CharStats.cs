@@ -30,16 +30,6 @@ public class CharStats : MonoBehaviour
             totalWumpaFruit += wumpaPointValue;
             Destroy(other.gameObject);
         }
-
-        //if collide with portal trigger, teleport player to next area
-        //then reset start position
-        if (other.gameObject.tag == "Portal")
-        {
-            //reset start pos to new spawnpoint
-            startPosition = other.gameObject.GetComponent<Portal>().spawnPoint.transform.position;
-            //bring player back to start position
-            transform.position = startPosition;
-        }
     }
     ///<summary>
     ///Removes a life when called upon
